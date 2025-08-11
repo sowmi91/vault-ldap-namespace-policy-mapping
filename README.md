@@ -21,15 +21,10 @@ ldap-utils (for ldapadd) installed locally — or run LDAP commands inside the c
 
 Python 3 and hvac (if using Python script)
 
-bash
-Copy
-Edit
 pip install hvac
 Required environment variables:
 
-bash
-Copy
-Edit
+
 export VAULT_ADDR="http://127.0.0.1:8200"
 export VAULT_TOKEN="s.xxxxx"        # Vault admin token
 export LDAP_ADMIN_PASS="admin"      # Optional, default for osixia image
@@ -37,8 +32,7 @@ export LDAP_ADMIN_PASS="admin"      # Optional, default for osixia image
 example.ldif
 
 ldif
-Copy
-Edit
+
 dn: ou=groups,dc=example,dc=org
 objectClass: organizationalunit
 ou: groups
@@ -62,29 +56,20 @@ Place your LDIF at ./example.ldif.
 
 Export required environment variables:
 
-bash
-Copy
-Edit
 export VAULT_ADDR="http://127.0.0.1:8200"
 export VAULT_TOKEN="s.xxxxx"
 export LDAP_ADMIN_PASS="admin"
 Run:
 
-bash
-Copy
-Edit
+
 ./deploy_vault_ldap.sh ./example.ldif
 Login via LDAP:
 
-bash
-Copy
-Edit
+
 vault login -method=ldap username=laura
 export VAULT_NAMESPACE=test
 🚀 Quick Start — Python Script
-bash
-Copy
-Edit
+
 export VAULT_ADDR="http://127.0.0.1:8200"
 export VAULT_TOKEN="s.xxxxx"
 python deploy_vault_ldap.py
@@ -112,9 +97,7 @@ Store VAULT_TOKEN and LDAP bind password securely
 
 Remove demo LDAP container after testing:
 
-bash
-Copy
-Edit
+
 docker stop my-openldap-container && docker rm my-openldap-container
 Revoke test tokens and delete test policies/groups after use
 
@@ -122,24 +105,17 @@ Revoke test tokens and delete test policies/groups after use
 LDAP connection issues:
 Ensure port 389 is exposed and container is running.
 
-bash
-Copy
-Edit
+
 docker ps | grep ldap
 Vault command errors:
 Ensure Vault is unsealed and VAULT_TOKEN has admin privileges.
 
 Inspect Vault auth methods:
 
-bash
-Copy
-Edit
+
 vault auth list
 List namespaces:
 
-bash
-Copy
-Edit
 vault namespace list
 📈 Next Steps / Improvements
 Replace static passwords with hashed or ephemeral credentials
