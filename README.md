@@ -27,7 +27,7 @@ Required environment variables:
 
 export VAULT_ADDR="http://127.0.0.1:8200"
 export VAULT_TOKEN="s.xxxxx"        # Vault admin token
-export LDAP_ADMIN_PASS="admin"      # Optional, default for osixia image
+export LDAP_ADMIN_PASS="xxxx"      # Optional, default for osixia image
 📜 Example LDAP Structure
 example.ldif
 
@@ -50,7 +50,7 @@ dn: cn=laura,ou=users,dc=example,dc=org
 objectClass: person
 cn: laura
 sn: laura
-userPassword: laura
+userPassword: xxxx
 🚀 Quick Start — Shell Script
 Place your LDIF at ./example.ldif.
 
@@ -58,7 +58,7 @@ Export required environment variables:
 
 export VAULT_ADDR="http://127.0.0.1:8200"
 export VAULT_TOKEN="s.xxxxx"
-export LDAP_ADMIN_PASS="admin"
+export LDAP_ADMIN_PASS="xxxx"
 Run:
 
 
